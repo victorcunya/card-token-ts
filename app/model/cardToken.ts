@@ -1,7 +1,7 @@
 
-import mongoose from 'mongoose';
+import { Schema, model } from 'mongoose';
 
-export type cardToken = mongoose.Document & {
+interface ICardToken {
     card_number: number;
     cvv: number;
     expiration_month: string;
@@ -9,27 +9,27 @@ export type cardToken = mongoose.Document & {
     email: string;
 }
 
-const cardTokenSchema = new mongoose.Schema({
+const cardTokenSchema = new Schema<ICardToken>({
     card_number: {
         type: Number,
-        required: [true, 'card number required.'],
+        required: true,
     },
     cvv: {
         type: Number,
-        require: [true, 'cvv required.'],
+        require: true,
     },
     expiration_month: {
         type: String,
-        require: [true, 'expiration month required.'],
+        require: true,
     },
     expiration_year: {
         type: String,
-        required: [true, 'expiration year required.'],
+        required: true,
     },
     email: {
         type: String,
-        require: [true, 'email required'],
+        require: true,
     }
 });
 
-export const CardToken = mongoose.model<cardToken>('cardToken', cardTokenSchema, 'cardToken');
+export const CardToken = model<ICardToken>('CardToken', cardTokenSchema);

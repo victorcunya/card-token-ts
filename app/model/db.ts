@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import { connect } from 'mongoose';
 
 const dbUrl: string = process.env.MONGO_DB
-export default mongoose.connect(dbUrl);
+export default connect(dbUrl);

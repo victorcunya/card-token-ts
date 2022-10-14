@@ -4,10 +4,10 @@ import {
     APIGatewayProxyResult,
     Context
 } from 'aws-lambda';
-import { CardToken } from './model';
+// import { CardToken } from './model';
 import { CardTokenController } from '@controller/cardToken';
 
-const controller = new CardTokenController(CardToken);
+const controller = new CardTokenController();
 
 export const create: APIGatewayProxyHandler = (
     event: APIGatewayProxyEvent,

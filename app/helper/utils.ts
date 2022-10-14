@@ -1,8 +1,9 @@
 
-enum StatusCode {
+export enum StatusCode {
     success = 200,
     created = 201,
     serverError = 500,
+    badRequest = 400,
 }
 
 class Result {
@@ -16,9 +17,6 @@ class Result {
         this.data = data;
     }
 
-    /**
-     * Serverless: According to the API Gateway specs, the body content must be stringified
-     */
     bodyToString() {
         return {
             statusCode: this.statusCode,
@@ -31,13 +29,14 @@ class Result {
 }
 
 export class Response {
+
     static success(data: object, statusCode: number = StatusCode.success) {
         const result = new Result(statusCode, 'success', data);
         return result.bodyToString();
     }
 
-    static error(message: string, statusCode: number = StatusCode.serverError) {
-        const result = new Result(statusCode, message, {});
+    static error(data: object, message: string, statusCode: number = StatusCode.serverError) {
+        const result = new Result(statusCode, message, data);
         return result.bodyToString();
     }
 }

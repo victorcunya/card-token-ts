@@ -10,10 +10,6 @@ export class CardTokenService {
         this.cardToken = cardToken;
     }
 
-    /**
-     * @param params 
-     * @returns 
-     */
     createCardToken(params: CreateCardTokenDto): Promise<object> {
         try {
             const result = this.cardToken.create({ ...params });

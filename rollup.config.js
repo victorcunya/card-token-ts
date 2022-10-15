@@ -19,12 +19,20 @@ export function pathAlias() {
                 replacement: aliasPath('controller'),
             },
             {
+                find: '@extensions',
+                replacement: aliasPath('extensions'),
+            },
+            {
                 find: '@helper',
                 replacement: aliasPath('helper'),
             },
             {
                 find: '@model',
                 replacement: aliasPath('model'),
+            },
+            {
+                find: '@repository',
+                replacement: aliasPath('repository'),
             },
             {
                 find: '@service',
@@ -37,7 +45,6 @@ export function pathAlias() {
 export default {
     input: 'app/index.ts',
     output: {
-        sourcemap: true,
         format: 'cjs',
         file: 'dist/index.js',
     },

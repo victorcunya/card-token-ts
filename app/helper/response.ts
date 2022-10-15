@@ -1,9 +1,11 @@
 
 export enum StatusCode {
-    success = 200,
-    created = 201,
-    serverError = 500,
-    badRequest = 400,
+    HTTP_200_OK = 200,
+    HTTP_201_CREATED = 201,
+    HTTP_400_BAD_REQUEST = 400,
+    HTTP_401_UNAUTHORIZED = 401,
+    HTTP_404_NOT_FOUND = 404,
+    HTTP_500_INTERNAL_SERVER_ERROR = 500,
 }
 
 class Result {
@@ -30,12 +32,19 @@ class Result {
 
 export class Response {
 
-    static success(data: object, statusCode: number = StatusCode.success) {
+    static success(
+        data: object,
+        statusCode: number = StatusCode.HTTP_200_OK
+    ) {
         const result = new Result(statusCode, 'success', data);
         return result.bodyToString();
     }
 
-    static error(data: object, message: string, statusCode: number = StatusCode.serverError) {
+    static error(
+        data: object,
+        message: string,
+        statusCode: number = StatusCode.HTTP_500_INTERNAL_SERVER_ERROR
+    ) {
         const result = new Result(statusCode, message, data);
         return result.bodyToString();
     }

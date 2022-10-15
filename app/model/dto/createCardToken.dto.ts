@@ -9,7 +9,7 @@ import {
     CustomValidCardNumber,
     CustomValidExpirationYear,
     CustomValidExpirationMonth,
-} from '@helper/validator';
+} from '@helper/index';
 
 export class CreateCardTokenDto {
 

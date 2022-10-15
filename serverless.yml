@@ -32,3 +32,9 @@ functions:
       - http:
           path: creates
           method: post
+  get:
+    handler: dist/index.getCardNumber
+    events:
+      - http:
+          path: gets/{token}
+          method: get

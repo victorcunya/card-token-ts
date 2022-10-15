@@ -10,7 +10,7 @@ import {
 })
 export class CustomValidExpirationYear implements ValidatorConstraintInterface {
 
-    validate(value: string, validationArguments?: ValidationArguments): boolean | Promise<boolean> {
+    validate(value: string): boolean {
         const cardYear = Number(value);
         const fullYear = new Date().getFullYear();
         return ((fullYear <= cardYear) && (cardYear <= fullYear + 5))
@@ -26,10 +26,11 @@ export class CustomValidExpirationYear implements ValidatorConstraintInterface {
 })
 export class CustomValidExpirationMonth implements ValidatorConstraintInterface {
 
-    validate(value: string, validationArguments?: ValidationArguments): boolean | Promise<boolean> {
+    validate(value: string): boolean {
         const month = Number(value);
         return ((1 <= month) && (month <= 12))
     }
+
     defaultMessage(arg?: ValidationArguments): string {
         return `Expiration month ${arg.value} invalid!`;
     }

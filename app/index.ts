@@ -1,18 +1,20 @@
 import {
     APIGatewayProxyEvent,
     APIGatewayProxyHandler,
-    APIGatewayProxyResult,
-    Context
+    APIGatewayProxyResult
 } from 'aws-lambda';
-// import { CardToken } from './model';
-import { CardTokenController } from '@controller/cardToken';
+import { CardTokenController } from '@controller/index';
 
 const controller = new CardTokenController();
 
 export const create: APIGatewayProxyHandler = (
-    event: APIGatewayProxyEvent,
-    context: Context
+    event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> => {
-    return controller.create(event, context);
+    return controller.create(event);
 };
 
+export const getCardNumber: APIGatewayProxyHandler = (
+    event: APIGatewayProxyEvent
+): Promise<APIGatewayProxyResult> => {
+    return controller.getCard(event);
+}

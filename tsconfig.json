@@ -7,7 +7,6 @@
       "ES2019"
     ], /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     "allowJs": true,
-    "sourceMap": true,
     "strictNullChecks": false,
     "preserveConstEnums": true,
     "strict": true, /* Enable all strict type-checking options. */
@@ -23,6 +22,9 @@
       "@controller/*": [
         "controller/*"
       ],
+      "@extensions/*": [
+        "extensions/*"
+      ],
       "@service/*": [
         "service/*"
       ],
@@ -31,6 +33,9 @@
       ],
       "@helper/*": [
         "helper/*"
+      ],
+      "@repository/*": [
+        "repository/*"
       ]
     }, /* Specify a set of entries that re-map imports to additional lookup locations. */
   },

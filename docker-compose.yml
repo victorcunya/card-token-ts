@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  redis:
+    image: culqi-redis:dev
+    container_name: culqi_redis
+    build:
+      context: ./docker/
+    ports:
+      - 6379:6379
+
+networks:
+  default:
+    name: $DOCKER_NETWORK
+    external: true

@@ -20,6 +20,7 @@ package:
     - '!node_modules/**'
     - '!*.json'
     - '!README.md'
+    - '!test/**'
   excludeDevDependencies: true
 
 useDotenv: true

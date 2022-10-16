@@ -3,7 +3,7 @@ import { APIGatewayProxyEvent } from 'aws-lambda';
 export const getEventBad: APIGatewayProxyEvent = {
     body: null,
     headers: {
-        Authorization: 'Bearer pk_ass_token__11',
+        Authorization: 'Bearer 6059f42b-956a-4357-820d-a458d4f36f4f',
         'User-Agent': 'PostmanRuntime/7.29.2',
         Accept: '*/*',
         'Postman-Token': 'aa87aec9-0602-4bdf-9ad2-71ff777b8a38',
@@ -14,7 +14,7 @@ export const getEventBad: APIGatewayProxyEvent = {
     httpMethod: 'GET',
     isBase64Encoded: false,
     multiValueHeaders: {
-        Authorization: ['Bearer pk_ass_token__11'],
+        Authorization: ['Bearer 6059f42b-956a-4357-820d-a458d4f36f4f'],
         'User-Agent': ['PostmanRuntime/7.29.2'],
         Accept: ['*/*'],
         'Postman-Token': ['aa87aec9-0602-4bdf-9ad2-71ff777b8a38'],

@@ -16,7 +16,8 @@ export class CardTokenController {
 
     async create(event: APIGatewayProxyEvent) {
 
-        this.validateHeader(event.headers);
+        const fail = this.validateHeader(event.headers);
+        if (fail) return fail;
         const body = (event.body) ? event.body : '{}'
         const cardTokenDto = plainToClass(CreateCardTokenDto, JSON.parse(body))
         const validated = await validate(cardTokenDto)
@@ -37,7 +38,8 @@ export class CardTokenController {
 
     async getCard(event: APIGatewayProxyEvent) {
 
-        this.validateHeader(event.headers);
+        const fail = this.validateHeader(event.headers);
+        if (fail) return fail;
         const token = event.pathParameters;
         const tokenDto = plainToClass(ValidateTokenDto, token);
         const validated = await validate(tokenDto)
@@ -70,12 +72,12 @@ export class CardTokenController {
     private validateHeader(headers: any) {
 
         if (!headers['Authorization']) {
-            throw Response.error({}, 'Not authorized!', StatusCode.HTTP_401_UNAUTHORIZED);
+            return Response.error({}, 'Not authorized!', StatusCode.HTTP_401_UNAUTHORIZED);
         }
 
         const pk = headers['Authorization'].split(' ').at(-1);
         if (!commercePk.includes(pk)) {
-            throw Response.error({}, `${pk} not registered`, StatusCode.HTTP_401_UNAUTHORIZED);
+            return Response.error({}, `${pk} not registered`, StatusCode.HTTP_401_UNAUTHORIZED);
         }
     }
 }

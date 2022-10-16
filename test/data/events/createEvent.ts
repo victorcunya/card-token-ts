@@ -9,7 +9,7 @@ export const createFail: APIGatewayProxyEvent = {
         '    "expirationMonth": "13"\n' +
         '}',
     headers: {
-        Authorization: 'Bearer pk_random_token',
+        Authorization: 'Bearer 6059f42b-956a-4357-820d-a458d4f36f4f',
         'Content-Type': 'application/json',
         'User-Agent': 'PostmanRuntime/7.29.2',
         Accept: '*/*',
@@ -22,7 +22,7 @@ export const createFail: APIGatewayProxyEvent = {
     httpMethod: 'POST',
     isBase64Encoded: false,
     multiValueHeaders: {
-        Authorization: ['Bearer pk_random_token'],
+        Authorization: ['Bearer 6059f42b-956a-4357-820d-a458d4f36f4f'],
         'Content-Type': ['application/json'],
         'User-Agent': ['PostmanRuntime/7.29.2'],
         Accept: ['*/*'],
@@ -99,7 +99,6 @@ export const createBad: APIGatewayProxyEvent = {
     httpMethod: 'POST',
     isBase64Encoded: false,
     multiValueHeaders: {
-        Authorization: ['Bearer pk_random_token'],
         'Content-Type': ['application/json'],
         'User-Agent': ['PostmanRuntime/7.29.2'],
         Accept: ['*/*'],
@@ -157,14 +156,14 @@ export const createBad: APIGatewayProxyEvent = {
 
 export const createOk: APIGatewayProxyEvent = {
     body: '{\n' +
-        '    "email": "admin@admin.com",\n' +
+        '    "email": "admin@gmail.com",\n' +
         '    "cardNumber": "4970110000000062",\n' +
         '    "cvv": "123",\n' +
         '    "expirationYear": "2023",\n' +
         '    "expirationMonth": "12"\n' +
         '}',
     headers: {
-        Authorization: 'Bearer pk_random_token',
+        Authorization: 'Bearer 6059f42b-956a-4357-820d-a458d4f36f4f',
         'Content-Type': 'application/json',
         'User-Agent': 'PostmanRuntime/7.29.2',
         Accept: '*/*',
@@ -177,7 +176,7 @@ export const createOk: APIGatewayProxyEvent = {
     httpMethod: 'POST',
     isBase64Encoded: false,
     multiValueHeaders: {
-        Authorization: ['Bearer pk_random_token'],
+        Authorization: ['Bearer 6059f42b-956a-4357-820d-a458d4f36f4f'],
         'Content-Type': ['application/json'],
         'User-Agent': ['PostmanRuntime/7.29.2'],
         Accept: ['*/*'],

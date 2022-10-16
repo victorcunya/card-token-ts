@@ -7,7 +7,7 @@ provider:
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-east-1'}
   environment:
-    MONGO_DB: ${file(config/${self:provider.stage}.yml):mongoDb}
+    REDIS_URL: ${file(config/${self:provider.stage}.yml):redisUrl}
 
 plugins:
   - serverless-offline

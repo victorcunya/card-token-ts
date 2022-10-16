@@ -9,12 +9,14 @@ import {
     CustomValidCardNumber,
     CustomValidExpirationYear,
     CustomValidExpirationMonth,
+    CustomEmailDomain,
 } from '@helper/index';
 
 export class CreateCardTokenDto {
 
     @IsEmail()
     @MaxLength(80)
+    @Validate(CustomEmailDomain)
     email!: string;
 
     @IsNumberString()

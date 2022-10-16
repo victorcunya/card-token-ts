@@ -22,12 +22,14 @@ export class CardTokenService {
     async getCardNumber(token: string) {
         try {
             const card = await this.repository.getCard(token);
-            return {
-                email: card.email,
-                cardNumber: card.cardNumber,
-                expirationYear: card.expirationYear,
-                expirationMonth: card.expirationMonth,
-            }
+            return (card) ?
+                {
+                    email: card.email,
+                    cardNumber: card.cardNumber,
+                    expirationYear: card.expirationYear,
+                    expirationMonth: card.expirationMonth,
+                }
+                : card
         } catch (error) {
             console.log(error);
             throw error;

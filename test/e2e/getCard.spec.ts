@@ -15,7 +15,6 @@ describe('Unthourized', () => {
     test('Without pk authorization', async () => {
         const result = await getCardNumber(getEventFail);
         expect(result.statusCode).toBe(401)
-        console.log(result);
         const body = JSON.parse(result.body)
         expect(body['message']).toEqual('Not authorized!')
     })

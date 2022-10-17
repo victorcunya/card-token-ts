@@ -19,20 +19,24 @@ $ yarn install
 ```sh
 $ yarn build
 ```
-3. Levantar BD local
+3. Crear file .env
+```sh
+REDIS_URL='redis://localhost:6379'
+```
+4. Levantar BD local
 ```sh
 $ make build
 $ make up
 ```
-4. Levantar servidor local.
+5. Levantar servidor local.
 ```sh
 $ sls offline
 ```
-5. Para ejecutar los test.
+6. Para ejecutar los test.
 ```sh
 $ yarn test
 ```
-6. Para analizar que el código esté correcto.
+7. Para analizar que el código esté correcto.
 ```sh
 $ yarn lint
 ```
